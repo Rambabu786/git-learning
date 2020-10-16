@@ -1,0 +1,91 @@
+1. GIT INIT: The git init command creates a new Git repository. It can be used to convert an existing, unversioned project to a Git repository or initialize a new, empty repository. Most other Git commands are not available outside of an initialized repository, so this is usually the first command you'll run in a new project.
+
+Executing git init creates a .git subdirectory in the current working directory, which contains all of the necessary Git metadata for the new repository. This metadata includes subdirectories for objects, refs, and template files. A HEAD file is also created which points to the currently checked out commit.
+
+
+2. GIT CLONE: git clone is a Git command line utility which is used to target an existing repository and create a clone, or copy of the target repository
+
+3. GIT CONFIG: The git config command is a convenience function that is used to set Git configuration values on a global or local project level. These configuration levels correspond to .gitconfig text files. Executing git config will modify a configuration text file. We'll be covering common configuration settings like email, username, and editor. We'll discuss Git aliases, which allow you to create shortcuts for frequently used Git operations.
+
+4. Aliases are used to create shorter commands that map to longer commands. Aliases enable more efficient workflows by requiring fewer keystrokes to execute a command.
+
+$ git clone https://github.com/deepak203/suresh-techs.git   
+$ git clone https://github.com/deepak203/suresh-techs.git rambabu-techs.git
+$ ls -ltra
+
+$ git init
+$ git add .
+$ git commit -m "new Project"
+$ git remote add origin https://github.com/Rambabu786/sweet-box.git
+$ git push -u origin master        -u: upstream
+
+INITIALIZING GIT REPOSITORY IN EXISTING PROJECT:
+------------------------------------------------
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box
+$ git init
+Initialized empty Git repository in C:/Projects/sweet-box/.git/
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ ls
+'New folder'/   new.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ ls -a
+ ./   ../   .git/  'New folder'/   new.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git add .
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   new.html
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git commit -m "new Project"
+[master (root-commit) 89981ef] new Project
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git commit
+On branch master
+nothing to commit, working tree clean
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ npp
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git remote add origin https://github.com/Rambabu786/sweet-box.git
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 232 bytes | 232.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Rambabu786/sweet-box.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/sweet-box (master)
+$

@@ -1,0 +1,164 @@
+BRANCHING: 03:25
+-----------
+1. BRANCH: A branch represents an independent line of development. ... The git branch command lets you create, list, rename, and delete branches. It doesn't let you switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the git checkout and git merge commands
+In a simple way, A pointer to one of the commit's.
+
+EX: git branch side-menu     : Creating Branch
+    git log --oneline
+    git checkout side-menu   : Moving to new/another branch
+    git checkout side-menu
+    git log --oneline
+    git checkout master
+    git checkout -b email-fix  : Create and moved to new branch
+
+2. HEAD: The HEAD points out the last commit in the current checkout branch. It is like a pointer to any reference. The HEAD can be understood as the "current branch." When you switch branches with 'checkout,' the HEAD is transferred to the new branch.
+
+3. MERGE: The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
+EX: git merge email-fix
+       Fast-forward
+    cat address.html
+    git log --oneline --graph --all
+    git merge side-menu
+       Merge made by the 'recursive' strategy. 
+
+    git branch --merge
+    git branch --no-merge
+
+4. Delete the branch
+    git branch -d email-fix
+    
+5. Git Conflicts: If two engineers done changes in same file on same line, Then will get conflict while commiting. 
+   to overcome: we need to remove anyone of entry from the file.
+    <html>
+    <body>
+    <h2> About </h2>
+    <<<<<<< HEAD
+    <p> I would like to learn Git alot and want to become a master, thank you </p>
+    <pre> Updating the file, Git is a good tool </pre>
+    =======
+    <p> I would like to learn Git alot and want to become a master, good bye </p>>
+    >>>>>>> side-menu
+    </body>
+    </html>
+
+
+
+ cd ram-branching/
+  281  ls
+  282  git status
+  283  git init
+  284  git status
+  285  git add .
+  286  git status
+  287  git commit -m "Intial commit"
+  288  git status
+  289  git log
+  290  git log --pretty=full
+  291  clear
+  292  ls
+  293  git status
+  294  git log -p
+  295  git log -2
+  296  git log --pretty=full
+  297  git status
+  298  git diff
+  299  git add home.html
+  300  git commit -m "updated home pageg"
+  301  git status
+  302  git log
+  303  git log --oneline
+  304  ls
+  305  clear
+  306  git branch side-menu
+  307  git log --oneline
+  308  git checkout side-menu
+  309  git checkout side-menu
+  310  git log --oneline
+  311  git checkout master
+  312  git log --oneline
+  313  git checkout side-menu
+  314  git log --oneline
+  315  ls
+  316  vi nav_bar.html
+  317  ls
+  318  git status
+  319  git add nav_bar.html
+  320  git status
+  321  git commit -m "added Nav bar"
+  322  hit log --oneline
+  323  git log --oneline
+  324  clear
+  325  ls
+  326  git checkout master
+  327  ls
+  328  git log --oneline
+  329  git log --oneline --all
+  330  ls
+  331  vi about.html
+  332  git status
+  333  git add about.html
+  334  git status
+  335  git commit -m "updated about page"
+  336  git log --oneline --graph
+  337  git log --oneline --graph --all
+  338  git checkout -b main-section
+  339  ls
+  340  vi home.html
+  341  git status
+  342  git add home.html
+  343  git commit -m "update main section"
+  344  git status
+  345  git checkout master
+  346  git status
+  347  git log --online --graph --all
+  348  git log --oneline --graph --all
+  349  ls
+  350  vi address.html
+  351  git checkout -b email-fix
+  352  ls
+  353  vi address.html
+  354  git status
+  355  git add address.html
+  356  git status
+  357  git commit -m "emial problem"
+  358  git log --oneline --graph --all
+  359  clear
+  360  ls
+  361  cat address.html
+  362  git checkout master
+  363  ls
+  364  cat address.html
+  365  git checkout email-fix
+  366  cat address.html
+  367  git checkout master
+  368  git merge email-fix
+       Fast-forward
+  369  cat address.html
+  370  git log --oneline --graph --all
+  371  git merge side-menu
+       Merge made by the 'recursive' strategy.
+  372  ls
+
+  379  git log --oneline --all
+  380  git branch -d email-fix
+  381  git log --oneline --all
+  382  git status
+  383  git log --oneline --graph --all
+  384  git checkout main-section
+  385  ls
+  386  cat address.html
+  387  git status
+  388  ls
+  389  vi home.html
+  390  git status
+  391  git add home.html
+  392  git commit -m "finished main section"
+  393  git checkout master
+  394  git checkout main-section
+  395  git log --oneline --graph --all
+  396  git checkout master
+  397  git merge main-section
+  398  cat home.html
+  399  history | tail -20
+  400  history | tail -30
+

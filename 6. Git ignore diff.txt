@@ -1,0 +1,118 @@
+1. Create an ignore file
+------------------------
+> Hash: Comments or blank Lines
+> specific file: intro.html
+> File Pattern: *.txt
+
+$ vi .gitignore
+*.txt : Ignore all .txt extention files
+!temp.txt :Ignore except this file
+/text.txt : only this file from current directoy
+Images/  : Ignore folder
+
+
+196  clear
+  197  git status
+  198  ls
+  199  npp .gitignore
+  200  ls
+  201  ls -a
+  202  git status
+
+2. DIFF:  
+---------
+Q. What is the difference between Git Status and git diff?
+A. The git diff command is often used along with git status and git log to analyze the current state of a Git repo.
+   In simple way, File has modified and went to stage, but not added/restore to repository.
+
+Git Status: Will show the files
+Git diff: will show the the content
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects
+$ cd life-cycle/
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git diff
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        Test/
+        temp.jsp
+        temp.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git add temp.txt
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   temp.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        Test/
+        temp.jsp
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git diff
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   temp.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   temp.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        Test/
+        temp.jsp
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git diff
+diff --git a/temp.txt b/temp.txt
+index e69de29..f9535dc 100644
+--- a/temp.txt
++++ b/temp.txt
+@@ -0,0 +1 @@
++Hi, How are you
+\ No newline at end of file
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git diff --staged
+diff --git a/temp.txt b/temp.txt
+new file mode 100644
+index 0000000..e69de29
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git diff --cached
+diff --git a/temp.txt b/temp.txt
+new file mode 100644
+index 0000000..e69de29
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$
+

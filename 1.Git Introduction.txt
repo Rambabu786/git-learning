@@ -1,0 +1,29 @@
+GIT [Unpleasent Person]
+Founder: Linus Torvalds [Linux Kernal Developer]
+Bitkeeper [Paid Version] 
+
+Features:
+- Distributed Source control System
+- Open Source
+- Large and Active community
+
+Install git in Windows:
+https://git-scm.com/download/win
+Please follow the steps to install git in your local PC: next -> next
+
+$ git version
+git version 2.28.0.windows.1
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git --help
+------------------------------------------------------
+What is repository?
+Repository, Where your projects[Data] resides in
+
+Where does repository livesin? What is github?
+One of the host, which can be hosts the repositories.
+
+----------------------------------------------------------
+
+Create Repository:
+New Repository > Owner > Name > Public/Private > Add a README file > Create Repository

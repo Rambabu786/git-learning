@@ -1,0 +1,22 @@
+Git Log: Git log is a utility tool to review and read a history of everything that happens to a repository. ... Multiple options can be used with a git log to make history more specific. Generally, the git log is a record of commits.
+
+Take a Sample repository called "Handmade-Math" from Git
+--------------------------------------------------------
+
+249  cd C:
+  250  cd Projects/
+  251  ls
+  252  git clone https://github.com/HandmadeMath/Handmade-Math.git
+  253  ls
+  254  git log
+  255  cd Handmade-Math/
+  256  git log
+  257  clear
+  258  git log -p
+  259  clear
+  260  git log -2
+  261  git log --pretty=oneline
+  262  git log --pretty=short
+  263  git log --pretty=full
+  264  git log --pretty=fuller
+  265  history

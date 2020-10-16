@@ -1,0 +1,89 @@
+git config:
+--global: personal information [User Informaion]
+--system: local users information
+--local: Project repository information
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global
+$ git config --global -e
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global user.name "Ramu"
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global -e
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global user.email "rambabu4unix@gmail.com"
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global -e
+
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+user.name=Ramu
+user.email=rambabu4unix@gmail.com
+
+Note: Link has been established git and git hub
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --help
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git help config
+
+-----------------------------------------------------
+
+Integrating Notepad++:
+-----------------------
+Set the system variable path in environment variable
+Right click on C drive > Properties > Advanced System Settings > Environment variable >  edit PATH > past below address
+C:\Program Files (x86)\Notepad++
+
+Exit from the Git Bash
+Open Git Bash
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ notepad++
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ notepad++ myfilename
+
+
+Alias:
+------------
+notepad++ .bash_profile     :Give below entry in notapad++
+
+alias npp="notepad++.exe -multiInst -nosession"
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ npp
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$
+
+Making notepadd++ as default editor:
+------------------------------------
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global core.editor "notepad++.exe -multiInst -nosession"
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global --list
+user.name=Ramu
+user.email=rambabu4unix@gmail.com
+core.editor=notepad++.exe -multiInst -nosession
+
+SYSINT6+sysadmin@sysint6 MINGW64 ~
+$ git config --global -e
+

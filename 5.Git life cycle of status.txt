@@ -1,0 +1,272 @@
+LIFE Cycle:
+------------
+Untracked		|		Tracked
+Untracked files		|	unmodified	modified	staged
+     ------------------------------add the file-------------------->
+
+                                    <--------commit-----------------
+                                   
+                                    ---Edit hte file--> 			: If you edited commited file
+
+							--Staged file-->
+<---Removee the file ---------------
+
+$ git status -s or --short
+
+1. --short
+2. ?? - Untracked Files
+3. A - Staging Area
+4. M - Modified Files
+
+---------------------------------------------------------------------------
+
+Untracked Files: until or unless if you are not running "git init" in local new repository, Those files and folders will be under untracked stage
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle
+$ pwd
+/c/Projects/life-cycle
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle
+$ git init
+Initialized empty Git repository in C:/Projects/life-cycle/.git/
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ ls -a
+./  ../  .git/  about.html  home.html  Images/
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git add homee.html
+fatal: pathspec 'homee.html' did not match any files
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git add home.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git commit -m "Added home.html"
+[master (root-commit) 3fcaedf] Added home.html
+ 1 file changed, 6 insertions(+)
+ create mode 100644 home.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ vi home.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git commit -m "updated home.html"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git add home.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git commit -m "updated home.html"
+[master f16dd64] updated home.html
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status -s
+?? Images/
+?? about.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status --short
+?? Images/
+?? about.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Images/
+        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git add .
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Images/21199761_1276500629117168_8767231514764103524_o.jpg
+        new file:   about.html
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git commit -m "committes all files"
+[master 23d1e8b] committes all files
+ 2 files changed, 6 insertions(+)
+ create mode 100644 Images/21199761_1276500629117168_8767231514764103524_o.jpg
+ create mode 100644 about.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git remote add origin https://github.com/Rambabu786/life-cycle
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git push -u origin master
+remote: Repository not found.
+fatal: repository 'https://github.com/Rambabu786/life-cycle/' not found
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git remote add origin https://github.com/Rambabu786/life-cycle.git
+fatal: remote origin already exists.
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$ git push -u origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (11/11), 84.02 KiB | 16.80 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Rambabu786/life-cycle
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/life-cycle (master)
+$
+--------------------------------------------------------------------------
+git status
+  161  cd ..
+  162  cd life-cycle/
+  163  ls -a
+  164  clear
+  165  pwd
+  166  git status
+  167  git init
+  168  ls -a
+  169  git status
+  170  git add homee.html
+  171  git add home.html
+  172  git status
+  173  git commit -m "Added home.html"
+  174  git status
+  175  vi home.html
+  176  git status
+  177  git commit -m "updated home.html"
+  178  git add home.html
+  179  git status
+  180  git commit -m "updated home.html"
+  181  git status
+  182  git status -s
+  183  git status --short
+  184  git status
+  185  git add .
+  186  git status
+  187  git commit
+  188  git commit -m "committes all files"
+  189  git status
+  190  git remote add origin https://github.com/Rambabu786/life-cycle
+  191  git status
+  192  git push -u origin master
+  193  git remote add origin https://github.com/Rambabu786/life-cycle.git
+  194  git push -u origin master

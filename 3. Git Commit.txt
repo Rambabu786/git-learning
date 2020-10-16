@@ -1,0 +1,85 @@
+Terms:
+- commit: Commit the current code merging to exsiting code
+- Clone: Excat Copy from the Github
+- Tracked/Untracked files: ".git" will be track all files, call tracking files, Which are not tracking files called untracked file
+- Branch:
+
+		Local machine								Remote machine
+
+1.Working Directory --add-- 2.Staging Area --commit-- 3.Repo (.git Area)	--push-- 4.git Hub
+
+Commit:
+-------
+* git commit
+* git commit -v
+* git commit -m "commit message"
+
+  92  git clone https://github.com/deepak203/suresh-techs.git
+   93  clear
+   94  git status
+   95  cd suresh-techs/
+   96  git status
+   97  git add home.html
+   98  git status
+   99  git commit -m "Fixed two tasks"
+  100  git push origin master
+  101  clear
+  102  git status
+  103  git push origin master
+  234  git status
+  235  git commit
+  236  git status
+  237  ls
+  238  vi home.html
+  239  git status
+  240  git add .
+  241  git status
+  242  git commit -v
+  245  git commit -m "Added new file"
+
+
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/suresh-techs (master)
+$ git add home.html
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/suresh-techs (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/suresh-techs (master)
+$ git commit -m "Fixed two Tasks"
+[master 73039b4] Fixed two Tasks
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+SYSINT6+sysadmin@sysint6 MINGW64 /c/Projects/suresh-techs (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 358 bytes | 179.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Rambabu786/suresh-techs.git
+   dd0acb5..73039b4  master -> master
+
+Clone the repository with our name:
+-----------------------------------
+- git clone https://github.com/deepak203/suresh-techs.git   :It will download with existing name "suresh-techs"
+- git clone https://github.com/deepak203/suresh-techs.git rambabu-techs.git  : It will download with given name
