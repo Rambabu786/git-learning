@@ -1,0 +1,4 @@
+P4MERGE:
+---------
+Git diff: Will tell differences between staging and working directory
+P4Merge is most effective tool to represent merge changes, User Interface
