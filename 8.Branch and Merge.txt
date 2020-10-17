@@ -85,7 +85,6 @@ EX: git merge email-fix
   319  git add nav_bar.html
   320  git status
   321  git commit -m "added Nav bar"
-  322  hit log --oneline
   323  git log --oneline
   324  clear
   325  ls
